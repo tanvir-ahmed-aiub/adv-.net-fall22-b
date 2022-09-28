@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+@Request["Name"]
+
+<h2>Create</h2>
+<form action="" method="post">
+    <input type="text" name="Name"  placeholder="Name" value="@(Model == null ? "" :Model.Name)" class="form-control"/>
+    @Html.ValidationMessage("Name")
+    <input type="text" name="Id" value="" placeholder="Id" class="form-control"/>
+    @Html.ValidationMessage("Id")
+    <input type="text" name="Teacher" value="" placeholder="Teacher" class="form-control"/>
+    @Html.ValidationMessage("Teacher")
+    
+    <input type="submit" name="name" value="Create" class="btn btn-success" />
+</form>
+
