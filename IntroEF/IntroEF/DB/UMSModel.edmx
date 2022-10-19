@@ -20,6 +20,8 @@
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cgpa" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Dob" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -53,6 +55,8 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cgpa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Dob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="UMS_bEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Departments" EntityType="Self.Department" />
@@ -84,6 +88,8 @@
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="UMS_bModel.Student">
               <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Cgpa" ColumnName="Cgpa" />

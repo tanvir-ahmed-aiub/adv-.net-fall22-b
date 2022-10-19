@@ -15,6 +15,7 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Cgpa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Dob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityContainer Name="UMS_bEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Departments" EntityType="Self.Department" />

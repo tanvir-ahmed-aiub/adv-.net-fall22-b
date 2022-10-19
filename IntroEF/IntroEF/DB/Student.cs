@@ -18,5 +18,7 @@ namespace IntroEF.DB
         public string Name { get; set; }
         public string Cgpa { get; set; }
         public string Dob { get; set; }
+        public int Age { get; set; }
+        public string Username { get; set; }
     }
 }

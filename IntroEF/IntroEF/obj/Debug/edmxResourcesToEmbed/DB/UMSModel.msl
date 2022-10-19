@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Students">
       <EntityTypeMapping TypeName="UMS_bModel.Student">
         <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="Age" ColumnName="Age" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Cgpa" ColumnName="Cgpa" />

@@ -27,6 +27,7 @@ namespace IntroEF.Controllers
             var db = new UMS_bEntities();
             db.Students.Add(student);
             db.SaveChanges();
+            TempData["msg"] = "Entry Inserted Successfully";
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -38,5 +39,26 @@ namespace IntroEF.Controllers
              return View(ext);
 
         }
+        [HttpPost]
+        public ActionResult Edit(Student formStu) {
+            var db = new UMS_bEntities();
+            var ext = (from st in db.Students
+                       where st.Id == formStu.Id
+                       select st).FirstOrDefault();
+            /*ext.Name = formStu.Name;
+            ext.Dob = formStu.Dob;
+            ext.Cgpa = formStu.Cgpa;
+            db.SaveChanges();*/
+            formStu.Age = ext.Age;
+            db.Entry(ext).CurrentValues.SetValues(formStu);
+            db.SaveChanges();
+            TempData["msg"] = "Entry Updated Successfully";
+            return RedirectToAction("Index");
+
+        }
+
+        // find ext object
+        //db.Studens.Remove(ext);
+        //db.SaveChanges();
     }
 }

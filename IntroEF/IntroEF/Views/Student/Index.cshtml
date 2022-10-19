@@ -4,6 +4,12 @@
 }
 
 <h2>Index</h2>
+@if(@TempData["msg"] != null)
+{
+    <span class="alert alert-info">@TempData["msg"]</span>
+}
+<a href="/student/create" class="btn btn-success">Create</a> 
+
 <table class="table table-bordered">
     @foreach (var st in Model)
     {

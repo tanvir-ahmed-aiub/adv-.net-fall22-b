@@ -15,6 +15,7 @@
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cgpa" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Dob" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

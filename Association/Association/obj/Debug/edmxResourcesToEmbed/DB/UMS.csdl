@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UMSfall22_bModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Courses_Departments" FromRole="Courses" ToRole="Departments" />
+    <NavigationProperty Name="CourseStudents" Relationship="Self.FK_CourseStudents_Courses" FromRole="Courses" ToRole="CourseStudents" />
+  </EntityType>
+  <EntityType Name="CourseStudent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_CourseStudents_Courses" FromRole="CourseStudents" ToRole="Courses" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_CourseStudents_Students" FromRole="CourseStudents" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Departments" FromRole="Departments" ToRole="Courses" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Students_Departments" FromRole="Departments" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cgpa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CourseStudents" Relationship="Self.FK_CourseStudents_Students" FromRole="Students" ToRole="CourseStudents" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Students_Departments" FromRole="Students" ToRole="Departments" />
+  </EntityType>
+  <Association Name="FK_Courses_Departments">
+    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseStudents_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="CourseStudents" Type="Self.CourseStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseStudents">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseStudents_Students">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="CourseStudents" Type="Self.CourseStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseStudents">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_Departments">
+    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
+    <End Role="Students" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UMSfall22_bEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="CourseStudents" EntityType="Self.CourseStudent" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="FK_Courses_Departments" Association="Self.FK_Courses_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseStudents_Courses" Association="Self.FK_CourseStudents_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="CourseStudents" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseStudents_Students" Association="Self.FK_CourseStudents_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="CourseStudents" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_Departments" Association="Self.FK_Students_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

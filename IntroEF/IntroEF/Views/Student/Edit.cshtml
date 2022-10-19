@@ -5,3 +5,10 @@
 
 <h2>Edit</h2>
 
+<form action="" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" placeholder="Name" value="@Model.Name" name="Name" class="form-control" />
+    <input type="text" placeholder="Dob" value="@Model.Dob" name="Dob" class="form-control" />
+    <input type="text" placeholder="Cgpa" value="@Model.Cgpa" name="Cgpa" class="form-control" />
+    <input type="submit" value="Create" class="btn btn-success" />
+</form>
