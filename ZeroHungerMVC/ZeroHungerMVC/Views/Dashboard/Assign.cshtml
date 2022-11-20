@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Assign";
+}
+
+<h2>Assign</h2>
+<form action="" method="post">
+    <input type="text" value="@ViewBag.id"  name="Id"/>
+    <select name="AssigedEmp">
+        @foreach(var emp in ViewBag.emps){ 
+            <option value="@emp.Id">@emp.Uname</option>
+        }
+    </select>
+    <input type="submit" />
+</form>

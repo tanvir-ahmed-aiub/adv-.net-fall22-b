@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BLL.DTOs.CollectionReqDTO>
+
+@{
+    ViewBag.Title = "Ngo";
+}
+
+<h2>Ngo</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevTime)
+        </td>
+        <td>
+           @if (item.AssignedEmp == null) { 
+            <a href="/dashboard/assign/@item.Id" class="btn btn-success">Assign</a>
+           }
+            
+        </td>
+    </tr>
+}
+
+</table>

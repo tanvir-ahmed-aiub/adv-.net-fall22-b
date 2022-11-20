@@ -18,6 +18,7 @@ namespace Association.DB
         public UMSfall22_bEntities()
             : base("name=UMSfall22_bEntities")
         {
+       
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

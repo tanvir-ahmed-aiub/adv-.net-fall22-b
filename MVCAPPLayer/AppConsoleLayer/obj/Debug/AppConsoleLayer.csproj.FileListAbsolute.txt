@@ -1,0 +1,16 @@
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\AppConsoleLayer.exe.config
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\AppConsoleLayer.exe
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\AppConsoleLayer.pdb
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\BLL.dll
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\DAL.dll
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\EntityFramework.dll
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\BLL.pdb
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\DAL.pdb
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\DAL.dll.config
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\bin\Debug\EntityFramework.xml
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.csproj.AssemblyReference.cache
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.csproj.CoreCompileInputs.cache
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.csproj.CopyComplete
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.exe
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\MVCAPPLayer\AppConsoleLayer\obj\Debug\AppConsoleLayer.pdb
