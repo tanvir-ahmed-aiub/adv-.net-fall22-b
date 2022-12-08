@@ -11,8 +11,8 @@ namespace DAL
 {
     public class DataAccessFactory
     {
-        public static IRepo<Group, int, bool> GroupDataAccess() {
-            return new GrpRepo();
+        public static IRepo<DAL.EFCodeFirst.Models.Group, int, bool> GroupDataAccess() {
+            return new GroupRepoV2();
         }
         public static IRepo<Donor, int, Donor> DonorDataAccess() {
             return new DonorRepo();

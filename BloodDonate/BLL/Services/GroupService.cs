@@ -14,7 +14,7 @@ namespace BLL.Services
     {
         public static List<GroupDTO> Get() {
             var data = DataAccessFactory.GroupDataAccess().Get();
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Group,GroupDTO>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<DAL.EFCodeFirst.Models.Group,GroupDTO>());
             var mapper = new Mapper(config);
             var groups = mapper.Map<List<GroupDTO>>(data);  
             return groups;
@@ -33,7 +33,7 @@ namespace BLL.Services
                 cfg.CreateMap<Group, GroupDTO>();
                 });
             var mapper = new Mapper(config);
-            var group = mapper.Map<Group>(dto);
+            var group = mapper.Map<DAL.EFCodeFirst.Models.Group>(dto);
             var result = DataAccessFactory.GroupDataAccess().Add(group);
             return result;
         }

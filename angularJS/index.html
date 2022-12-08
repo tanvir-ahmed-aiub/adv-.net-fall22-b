@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+            var app = angular.module("my-app",[]);
+            // app.controller("name",function($scope){
+
+            // });
+            app.controller("frstCtrl",function($scope){
+                $scope.a = 10;
+                $scope.b = 23;
+                $scope.c = $scope.a + $scope.b;
+            });
+
+            app.controller("sctrl",function($scope){
+                $scope.cars = ["BMW","Toyota","Honda"];
+            });
+            app.controller("loginCtrl",function($scope){
+                $scope.login = function(){
+                    alert($scope.uname+" "+$scope.pass);
+                };
+
+            });
+            app.controller("ctrinfoCtrl",function($scope,$http){
+                //$http.get("").then(function(){},function(){});
+                $http.get("https://localhost:44388/api/category/all").then(function(succ){
+                    //debugger;
+                    $scope.cts = succ.data;
+                },function(err){
+                    debugger;
+                });
+            });
+
+            app.controller("addCtrl",function($scope,$http){
+                $scope.add = function(){
+                    var obj = {Name:$scope.name};
+                    $http.post("https://localhost:44388/api/category/add",obj).then(function(rsp){
+                        debugger;
+                    },function(err){
+                        debugger;
+                    });
+                };
+            });
+
+        </script>
+    </head>
+    <body ng-app="my-app">
+        <input type="text" ng-model="name">
+        <h1>{{name}}</h1>
+        <h1>{{name}}</h1>
+        <h1>{{name}}</h1>
+        <h1>{{name}}</h1>
+
+        <div ng-controller="frstCtrl">
+            {{a}} + {{b}} = {{c}}
+        </div>
+        
+        
+        <div ng-controller="sctrl">
+           <ul>
+            <li ng-repeat="c in cars">{{c}}</li>
+           </ul>
+        </div>
+        <div ng-controller="loginCtrl">
+            <form ng-submit="login()">
+                <input type="text" ng-model="uname"><br>
+                <input type="password" ng-model="pass"><br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div ng-controller="ctrinfoCtrl">
+            <table border="1" style="border-collapse: collapse;">
+                <tr ng-repeat="c in cts">
+                    <td>{{c.Id}}</td>
+                    <td>{{c.Name}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div ng-controller="addCtrl">
+            <form ng-submit="add()">
+                <input type="text" ng-model="name"><br>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+    </body>
+</html>

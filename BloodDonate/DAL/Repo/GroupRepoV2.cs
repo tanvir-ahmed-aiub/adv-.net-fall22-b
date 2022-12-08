@@ -1,4 +1,5 @@
-﻿using DAL.EF;
+﻿using DAL.EFCodeFirst;
+using DAL.EFCodeFirst.Models;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,10 @@ namespace DAL.Repo
 {
     internal class GroupRepoV2 : IRepo<Group, int, bool>
     {
+        BloodDonateEntities db;
+        internal GroupRepoV2() { 
+        db = new BloodDonateEntities(); 
+        }
         public bool Add(Group obj)
         {
             throw new NotImplementedException();
@@ -22,7 +27,7 @@ namespace DAL.Repo
 
         public List<Group> Get()
         {
-            throw new NotImplementedException();
+           return db.Groups.ToList();
         }
 
         public Group Get(int id)

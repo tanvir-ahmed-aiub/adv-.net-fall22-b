@@ -74,3 +74,5 @@ C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\DAL.pdb
 C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\DAL.dll.config
 C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\AutoMapper.xml
 C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\EntityFramework.xml
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\EntityFramework.SqlServer.dll
+C:\Users\Tanvir Ahmed\Desktop\.NET\B\BloodDonate\BloodDonate\bin\EntityFramework.SqlServer.xml
